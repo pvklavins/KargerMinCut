@@ -1,4 +1,4 @@
-# kargerMinCut
+# Karger Minimum Cut in Python
 This is a python 3.0+ implementation of the Karger Minimum Cut Algorithm
 This program uses a simple node-network to implementation
 
