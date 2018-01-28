@@ -5,30 +5,27 @@ Created on Sat Jan 27 10:55:37 2018
 @author: PK
 """
 from network import network
-from listOfEdges import listOfEdges
 from node import node
 import random
 
 if __name__ == "__main__":
-    
-    iterations = 10
+    iterations = 200**2
     minCut = 1000000
 
     for j in range(0,iterations):
         f = open("kargerMinCut.txt","r") #opens file with name of "test.txt"
-        lop = []
         lon = []
         for line in f:
+            loe = []
             los = line.split()
             first = int(los.pop(0))
-            lon.append(node(first))
             for i in range(0,len(los)):
-                pon = (first, int(los[i]))
-                lop.append(pon)
-        f.close()
-        loe = listOfEdges(lop)
-        
-        network1 = network(lon,loe)
+                edge = int(los[i])
+                loe.append(edge)
+            lon.append(node(first,loe))
+
+        f.close()      
+        network1 = network(lon)
         newCut = network1.minCut()   
         
         if newCut < minCut:

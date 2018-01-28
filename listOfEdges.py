@@ -5,7 +5,7 @@ Created on Sat Jan 27 14:55:24 2018
 @author: PK
 """
 
-import random
+
 
 class listOfEdges(object):
     def __init__(self, loe):
@@ -20,9 +20,7 @@ class listOfEdges(object):
     def getLength(self):
         return len(self.getLoe())
     
-    def getRandomEdge(self):
-        randomSpot = random.randrange(0,self.getLength())
-        return self.getLoe()[randomSpot]
+
 
     def clearSelfLoops(self,lon):
         okayLoe = []
@@ -33,4 +31,4 @@ class listOfEdges(object):
 
 
     
-            
+
